@@ -19,8 +19,8 @@ require 'terraform/no_output_parser'
 ::RSpec.describe ::Terraform::NoOutputParser do
   let(:described_instance) { described_class.new }
 
-  describe '#each_name' do
-    subject do lambda do |block| described_instance.each_name(&block) end end
+  describe '#each' do
+    subject do lambda do |block| described_instance.each(&block) end end
 
     it 'does not yield' do
       is_expected.to_not yield_control
